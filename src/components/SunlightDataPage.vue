@@ -44,17 +44,15 @@
                 lat: this.latitude,
                 lng: this.longitude,
             };
-            console.log('QUERY', queryParams)
             axios.get('http://localhost:5000/sunlight-one-year', { params: queryParams })
                 .then(response => {
-                    console.log('DATA', response.data)
-                this.sunlightData = response.data;
+                    this.sunlightData = response.data;
             });
         },
         async getGeolocation() {
             try {
                 const position = await new Promise((resolve, reject) => {
-                navigator.geolocation.getCurrentPosition(resolve, reject);
+                    navigator.geolocation.getCurrentPosition(resolve, reject);
                 });
                 this.latitude = position.coords.latitude.toString();
                 this.longitude = position.coords.longitude.toString();

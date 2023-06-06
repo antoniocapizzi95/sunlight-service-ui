@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  sunlight-service-ui:
+    container_name: sunlight-service-ui
+    command: bash -c "yarn serve"
+    build: .
+    ports:
+      - '8080:8080'
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true
