@@ -20,6 +20,7 @@
         <li v-for="sunlightInfo in sunlightData" :key="sunlightInfo.date">
             <p>Date: {{sunlightInfo.date}}</p>
             <p>Total hours of daylight: {{sunlightInfo.total_hours_of_light}}</p>
+            <p>---------------------------------</p>
         </li>
         </ul>
     </div>
@@ -31,7 +32,7 @@
     export default {
       data() {
         return {
-          date: '',
+          date: new Date(),
           latitude: '',
           longitude: '',
           sunlightData: []
@@ -39,6 +40,7 @@
       },
       methods: {
         fetchData() {
+            this.sunlightData = [];
             const queryParams = {
                 date: new Date(this.date).toISOString(),
                 lat: this.latitude,
