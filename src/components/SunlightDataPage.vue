@@ -13,7 +13,7 @@
             <label for="lng">Longitude</label>
             <input type="text" name="lng" id="lng" v-model="longitude">
         </div>
-        <button type="button" @click="getGeolocation">Get current posizion</button>
+        <button type="button" @click="getGeolocation">Get current position</button>
         <button type="submit">Send</button>
         </form>
         <ul>
