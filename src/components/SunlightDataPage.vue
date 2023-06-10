@@ -28,6 +28,7 @@
   
   <script>
     import axios from 'axios';
+    import config from '../config';
 
     export default {
       data() {
@@ -46,7 +47,7 @@
                 lat: this.latitude,
                 lng: this.longitude,
             };
-            axios.get('http://localhost:5000/sunlight-one-year', { params: queryParams })
+            axios.get(`${config.apiBaseUrl}/sunlight-one-year`, { params: queryParams })
                 .then(response => {
                     this.sunlightData = response.data;
             });
