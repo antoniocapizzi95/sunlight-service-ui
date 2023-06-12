@@ -1,27 +1,27 @@
 <template>
     <div>
         <form @submit.prevent="fetchData">
-        <div class="form-group">
-            <label for="date">Date</label>
-            <input type="date" name="date" id="date" v-model="date">
-        </div>
-        <div class="form-group">
-            <label for="lat">Latitude</label>
-            <input type="text" name="lat" id="lat" v-model="latitude">
-        </div>
-        <div class="form-group">
-            <label for="lng">Longitude</label>
-            <input type="text" name="lng" id="lng" v-model="longitude">
-        </div>
-        <button type="button" @click="getGeolocation">Get current position</button>
-        <button type="submit">Send</button>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date" v-model="date" required>
+            </div>
+            <div class="form-group">
+                <label for="lat">Latitude</label>
+                <input type="text" name="lat" id="lat" v-model="latitude" required>
+            </div>
+            <div class="form-group">
+                <label for="lng">Longitude</label>
+                <input type="text" name="lng" id="lng" v-model="longitude" required>
+            </div>
+            <button type="button" @click="getGeolocation">Get current position</button>
+            <button type="submit">Send</button>
         </form>
         <ul>
-        <li v-for="sunlightInfo in sunlightData" :key="sunlightInfo.date">
-            <p>Date: {{sunlightInfo.date}}</p>
-            <p>Total hours of daylight: {{sunlightInfo.total_hours_of_light}}</p>
-            <p>---------------------------------</p>
-        </li>
+            <li v-for="sunlightInfo in sunlightData" :key="sunlightInfo.date">
+                <p>Date: {{sunlightInfo.date}}</p>
+                <p>Total hours of daylight: {{sunlightInfo.total_hours_of_light}}</p>
+                <p>---------------------------------</p>
+            </li>
         </ul>
     </div>
   </template>
